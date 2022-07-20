@@ -4,6 +4,7 @@ const UserController = require('../Controllers/UserController');
 const LoginController = require('../Controllers/LoginController');
 const PostController = require('../Controllers/PostController');
 const ProfileController = require('../Controllers/ProfileController');
+const LikeController = require('../Controllers/LikeController');
 
 const router = Router();
 
@@ -22,5 +23,9 @@ router.delete('/posts/:id', PostController.deletePost);
 
 //Profile Routes
 router.get('/users/:id', ProfileController.getProfile);
+
+//Like Route
+router.post('/posts/:id/like', LikeController.likePost);
+router.post('/posts/:id/deslike', LikeController.deslikePost);
 
 module.exports = router;
