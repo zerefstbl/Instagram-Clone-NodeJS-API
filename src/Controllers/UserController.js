@@ -14,7 +14,7 @@ module.exports = {
       }
 
       const createdUser = await User.create({ username, password, name, description, site })
-
+      console.log('ok');
       return res.status(200).send({
         message: 'User created succesfully',
         data: createdUser
@@ -35,5 +35,5 @@ module.exports = {
       return res.status(400).send(err)
     }
   }
-  
+
 }
