@@ -15,11 +15,9 @@ const Schema = new mongoose.Schema({
   },
   avatar: {
     type: String,
-    required: true
   },
   description: {
     type: String,
-    required: true
   },
   site: {
     type: String
