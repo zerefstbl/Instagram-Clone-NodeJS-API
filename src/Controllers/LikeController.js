@@ -20,7 +20,7 @@ module.exports = {
       }
 
       return res.status(200).send({
-        message: "Post found!!",
+        message: "Post Liked!!",
         post: likePost
       });
     } catch (err) {
@@ -30,18 +30,4 @@ module.exports = {
       });
     }
   },
-
-  async deslikePost(req, res) {
-    const { id } = req.params;
-    const { user_id } = req.headers;
-    try {
-      const post = Post.findById(id);
-
-    } catch (err) {
-      return res.status(400).send({
-        message: "Post not Found",
-        err
-      })
-    }
-  }
 };

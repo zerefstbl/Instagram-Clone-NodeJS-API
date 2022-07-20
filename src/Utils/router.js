@@ -8,8 +8,6 @@ const LikeController = require('../Controllers/LikeController');
 
 const router = Router();
 
-router.get('/', (req, res) => {return res.send('Ola Mundo Novamente')});
-
 //User Routes
 router.post('/users', UserController.createUser);
 router.get('/users', UserController.listUsers);
@@ -26,6 +24,5 @@ router.get('/users/:id', ProfileController.getProfile);
 
 //Like Route
 router.post('/posts/:id/like', LikeController.likePost);
-router.post('/posts/:id/deslike', LikeController.deslikePost);
 
 module.exports = router;
