@@ -13,6 +13,10 @@ const Schema = new mongoose.Schema({
     type: String,
     required: true
   },
+  avatar: {
+    type: String,
+    required: true
+  },
   description: {
     type: String,
     required: true

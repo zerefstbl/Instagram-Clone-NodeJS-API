@@ -2,7 +2,7 @@ const User = require('../Models/User');
 
 module.exports = {
   async createUser(req, res) {
-    const { username, password, name, description, site } = req.body;
+    const { username, password, name, description, site, avatar } = req.body;
     try {
 
       const userAlreadyExists = await User.findOne({
@@ -13,8 +13,7 @@ module.exports = {
         return res.status(400).send({ message: "User Already exists. Try another one!" })
       }
 
-      const createdUser = await User.create({ username, password, name, description, site })
-      console.log('ok');
+      const createdUser = await User.create({ username, password, name, description, site, avatar })
       return res.status(200).send({
         message: 'User created succesfully',
         data: createdUser
